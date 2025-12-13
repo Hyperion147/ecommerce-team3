@@ -6,49 +6,33 @@ export default function Cart() {
   if (cart.length === 0) {
     return (
       <h2 className="text-center text-4xl mt-20">
-        YOU NEED TO ADD SOMETHING IN CART FIRST GARIB😂
+        YOU NEED TO ADD SOMETHING IN CART FIRST GARIB 😂
       </h2>
     );
   }
 
   return (
-    <div className="flex flex-wrap gap-2 justify-center p-6 mt-20 bg-gray-900 h-screen">
+    <div className="flex flex-wrap gap-4 justify-center p-6 mt-20 bg-gray-900 min-h-screen">
       {cart.map((item) => (
         <div
           key={item.id}
-          className="w-86 rounded-2xl flex flex-col items-center justify-between border p-4 mb-3 gap-4 bg-gray-700 transition-all duration-300 hover:scale-125 h-fit "
+          className="w-80 h-fit rounded-2xl bg-gray-700 p-4 text-white transition-all duration-500 hover:scale-110  "
         >
-          
-          <div className="flex justify-between">
-            <div>
-                <img
-                  src={item.thumbnail}
-                  alt={item.title}
-                  className="object-contain w-full"
-                />
-            </div>
+          <img
+            src={item.thumbnail}
+            alt={item.title}
+            className="h-40 mx-auto object-contain"
+          />
 
-              
-            <div>
-                <h3 className="flex-1">{item.title}</h3>
+          <h3 className="mt-2 font-bold">{item.title}</h3>
+          <p>Qty: {item.qty}</p>
 
-              
-                <p>Qty: {item.qty}</p>
-            </div>
-          </div>
-
-          
-          <div>
-
-            <button
-              onClick={() => removeFromCart(item.id)}
-              className="text-red-500"
-            >
-              Remove
-            </button>
-
-          </div>
-
+          <button
+            onClick={() => removeFromCart(item.id)}
+            className="mt-2 text-red-400"
+          >
+            Remove
+          </button>
         </div>
       ))}
     </div>
