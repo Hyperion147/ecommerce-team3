@@ -69,7 +69,7 @@ export default function Navbar() {
           
           <Link
             to="/login"
-            className="px-4 py-2 text-gray-950 font-bold rounded-2xl hover:bg-white/20"
+            className="px-4 py-2 text-gray-950 font-bold rounded-2xl hover:bg-white/20 text-2xl"
           >
             LOGIN
           </Link>
